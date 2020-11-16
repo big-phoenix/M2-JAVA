@@ -5,11 +5,9 @@ import java.util.*;
 public class Lletres_Repetides {
 
 	public static void main(String[] args) {
-	
+
 		List<Character> nom = new ArrayList<>();
-		char [] vocales = {'a','e','i','o','u'};
-		int contador = 0;
-		boolean vocal = false;
+		HashMap<Character, Integer> llista = new HashMap<Character, Integer>();
 		
 		nom.add('j');
 		nom.add('o');
@@ -23,28 +21,30 @@ public class Lletres_Repetides {
 		nom.add('r');
 		
 		
-		for(int i=0; i<nom.size(); i++) {
+		System.out.print(nom+"\n");
+		
+		for(int i=0; i < nom.size() ;i++) {
 			
-			while(contador != vocales.length) {
+			int num = 0;
+			int contador = 0;
+			
+			while(contador != nom.size()) {
 				
-				if(nom.get(i) == vocales[contador]) {
-					System.out.print("VOCAL: " +nom.get(i)+ "\n");
-					vocal = true;
-					contador = vocales.length;
-				}else {
-					contador++;
+				char igual = nom.get(i);
+				
+				
+				if(igual == nom.get(contador)) {
+					num++;
 				}
 				
+				contador++;
 			}
 			
-			if(vocal == false) {
-				System.out.print("CONSONTANT\n");
-			};
-			
-			vocal = false;
-			contador = 0;
+			llista.put(nom.get(i), num);
 			
 		}
+			
+		System.out.print(llista);
 
 	}
 
