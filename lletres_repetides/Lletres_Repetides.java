@@ -7,6 +7,7 @@ public class Lletres_Repetides {
 	public static void main(String[] args) {
 
 		List<Character> nom = new ArrayList<>();
+		List<Character> cognom = new ArrayList<>();
 		HashMap<Character, Integer> llista = new HashMap<Character, Integer>();
 		
 		nom.add('j');
@@ -20,31 +21,19 @@ public class Lletres_Repetides {
 		nom.add('e');
 		nom.add('r');
 		
+		cognom.add('b');
+		cognom.add('e');
+		cognom.add('n');
+		cognom.add('i');
+		cognom.add('t');
+		cognom.add('o');
 		
-		System.out.print(nom+"\n");
 		
-		for(int i=0; i < nom.size() ;i++) {
-			
-			int num = 0;
-			int contador = 0;
-			
-			while(contador != nom.size()) {
-				
-				char igual = nom.get(i);
-				
-				
-				if(igual == nom.get(contador)) {
-					num++;
-				}
-				
-				contador++;
-			}
-			
-			llista.put(nom.get(i), num);
-			
-		}
-			
-		System.out.print(llista);
+		nom.add(' ');
+		nom.addAll(cognom);
+		System.out.print("Fullname: " +nom);
+		
+	
 
 	}
 
